@@ -1,0 +1,23 @@
+@import url(./fonts/font.css);
+
+.body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  background-color: black;
+}
+
+.array {
+  min-width: 10px;
+}
+
+.number {
+  font-family: "Matrix";
+  font-size: 20px;
+}
