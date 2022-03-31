@@ -8,7 +8,6 @@ function getArrayOfNumbers() {
   if (width >= 1023) n = 40
   if (width < 1023) n = 30
   if (width < 767) n = 20
-  if (width < 400) n = 15
   const arrayOfNumbers = [...new Array(Math.floor(height / n))]
   return arrayOfNumbers
 }
@@ -18,7 +17,6 @@ function getArrayOfArrays() {
   if (width >= 1023) n = 40
   if (width < 1023) n = 30
   if (width < 767) n = 20
-  if (width < 400) n = 15
   const arrayOfArrays = [...new Array(Math.floor(width / n))]
   return arrayOfArrays
 }
