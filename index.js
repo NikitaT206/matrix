@@ -5,7 +5,7 @@ const width = window.innerWidth
 
 function getArrayOfNumbers() {
   let n
-  if (width < 1279) n = 40
+  if (width >= 1023) n = 40
   if (width < 1023) n = 30
   if (width < 767) n = 20
   if (width < 400) n = 15
@@ -15,7 +15,7 @@ function getArrayOfNumbers() {
 
 function getArrayOfArrays() {
   let n
-  if (width < 1279) n = 40
+  if (width >= 1023) n = 40
   if (width < 1023) n = 30
   if (width < 767) n = 20
   if (width < 400) n = 15
