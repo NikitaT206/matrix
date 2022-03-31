@@ -37,7 +37,7 @@ arrays.forEach((array) => {
 
   setInterval(() => {
     time = Math.floor(Math.random() * 10000 + 5000)
-    delay = Math.floor(Math.random() * 200 + 50)
+    delay = Math.floor(Math.random() * 100 + 40)
   }, time)
 
   const numbers = array.childNodes
@@ -46,11 +46,14 @@ arrays.forEach((array) => {
     setInterval(() => {
       setTimeout(() => {
         numbers[i].style.color = `rgb(100, 255, 100)`
-        numbers[i].style.transition = '0s'
+        numbers[i].style.textShadow = `0 0 5px greenyellow`
+        numbers[i].style.transition = 'color 0s'
         numbers[i].textContent = getRandomNumber()
+        
         setTimeout(() => {
+          numbers[i].style.textShadow = `none`
           numbers[i].style.color = `black`
-          numbers[i].style.transition = '2.5s linear'
+          numbers[i].style.transition = 'color 1s linear'
         }, delay)
       }, i * delay)
     }, time)
