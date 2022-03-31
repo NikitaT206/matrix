@@ -3,11 +3,13 @@
 const height = window.innerHeight
 const width = window.innerWidth
 
-function getArrayOfNumbers() {
+const arrayOfSymbols = ["!", "#", '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ';', ':', '<', '=', '>', '?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', ']', '^', '_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '}', '|', '~' ]
+
+function getArrayOfSymbols() {
   let n
-  if (width >= 1023) n = 40
-  if (width < 1023) n = 30
-  if (width < 767) n = 20
+  if (width > 1023) n = 35
+  if (width <= 1023 && width >= 768) n = 25
+  if (width <= 767) n = 5
   const arrayOfNumbers = [...new Array(Math.floor(height / n))]
   return arrayOfNumbers
 }
@@ -21,15 +23,15 @@ function getArrayOfArrays() {
   return arrayOfArrays
 }
 
-function getRandomNumber() {
-  let randomNumber = Math.floor(Math.random() * 10)
-  return randomNumber
+function getRandomSymbol() {
+  let randomSymbol = arrayOfSymbols[Math.floor(Math.random() * arrayOfSymbols.length - 1)]
+  return randomSymbol
 }
 
 function createArray() {
   const array = document.createElement('div')
   array.classList.add('array')
-  getArrayOfNumbers().forEach(() => {
+  getArrayOfSymbols().forEach(() => {
     const number = document.createElement('div')
     number.classList.add('number')
     array.prepend(number)
@@ -71,7 +73,7 @@ arrays.forEach((array) => {
             numbers[i].style.color = `rgb(100, 255, 100)`
             numbers[i].style.textShadow = `0 0 5px greenyellow`
             numbers[i].style.transition = '0s'
-            numbers[i].textContent = getRandomNumber()
+            numbers[i].textContent = getRandomSymbol()
             clearTimeout(timeout)
             two()
           }, i * delay)
@@ -99,4 +101,5 @@ arrays.forEach((array) => {
     go()
   }
 })
+
 
