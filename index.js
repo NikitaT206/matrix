@@ -37,7 +37,7 @@ arrays.forEach((array) => {
 
   setInterval(() => {
     time = Math.floor(Math.random() * 10000 + 5000)
-    delay = Math.floor(Math.random() * 100 + 40)
+    delay = Math.floor(Math.random() * 200 + 50)
   }, time)
 
   const numbers = array.childNodes
