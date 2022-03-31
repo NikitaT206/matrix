@@ -42,14 +42,13 @@ arrays.forEach((array) => {
 
   const numbers = array.childNodes
 
-  for (let i = 0; i < numbers.length; i++) {    
+  for (let i = 0; i < numbers.length; i++) {  
     setInterval(() => {
       setTimeout(() => {
         numbers[i].style.color = `rgb(100, 255, 100)`
         numbers[i].style.textShadow = `0 0 5px greenyellow`
         numbers[i].style.transition = 'color 0s'
         numbers[i].textContent = getRandomNumber()
-        
         setTimeout(() => {
           numbers[i].style.textShadow = `none`
           numbers[i].style.color = `black`
