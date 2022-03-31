@@ -14,11 +14,50 @@
 }
 
 .array {
-  min-width: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
 }
 
 .number {
   font-family: "Matrix";
-  font-size: 20px;
+  font-size: 40px;
   color: black;
+}
+
+@media screen and (max-width: 1280px) {
+  .array {
+    min-width: 40px;
+  }
+  .number {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .array {
+    min-width: 30px;
+  }
+  .number {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .array {
+    min-width: 20px;
+  }
+  .number {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .array {
+    min-width: 15px;
+  }
+  .number {
+    font-size: 15px;
+  }
 }
