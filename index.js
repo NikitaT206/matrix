@@ -8,8 +8,8 @@ const arrayOfSymbols = ["!", "#", '$', '%', '&', '(', ')', '*', '+', ',', '-', '
 function getArrayOfSymbols() {
   let n
   if (width > 1023) n = 35
-  if (width <= 1023 && width >= 768) n = 25
-  if (width <= 767) n = 17
+  if (width >= 768) n = 25
+  if (width <= 767) n = 20
   const arrayOfNumbers = [...new Array(Math.floor(height / n))]
   return arrayOfNumbers
 }
@@ -18,7 +18,7 @@ function getArrayOfArrays() {
   let n
   if (width >= 1023) n = 40
   if (width < 1023) n = 30
-  if (width < 767) n = 19
+  if (width < 767) n = 24
   const arrayOfArrays = [...new Array(Math.floor(width / n))]
   return arrayOfArrays
 }
