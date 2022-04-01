@@ -55,9 +55,9 @@ arrays.forEach((array) => {
   let transitionDelay = Math.floor(Math.random() * 10)
 
   setInterval(() => {
-    time = Math.floor(Math.random() * 4000 + 2500)
+    time = Math.floor(Math.random() * 6000 + 3000)
     delay = Math.floor(Math.random() * 150 + 50)
-    transitionDelay = Math.floor(Math.random() * 1000 + 200)
+    transitionDelay = Math.floor(Math.random() * 1500 + 200)
   }, time)
 
   const numbers = array.childNodes
@@ -70,8 +70,8 @@ arrays.forEach((array) => {
         function one() {
 
           const timeout = setTimeout(() => {
-            numbers[i].style.color = `rgb(100, 255, 100)`
-            numbers[i].style.textShadow = `0 0 5px greenyellow`
+            numbers[i].style.color = `#00ff2b`
+            numbers[i].style.textShadow = `0 0 5px rgb(151, 255, 152)`
             numbers[i].style.transition = '0s'
             numbers[i].textContent = getRandomSymbol()
             clearTimeout(timeout)
@@ -82,12 +82,13 @@ arrays.forEach((array) => {
 
           const timeout3 = setTimeout(() => {
             numbers[i].style.textShadow = 'none'
-            numbers[i].style.color = 'rgb(40, 255, 40)'
+            numbers[i].style.color = '#009a22'
+            numbers[i].style.transition = `color .4s linear, text-shadow 100ms`
             clearInterval(timeout3)
           }, delay)
 
           const timeout2 = setTimeout(() => {
-            numbers[i].style.transition = `color ${transitionDelay}ms linear`
+            numbers[i].style.transition = `color ${transitionDelay}ms linear, text-shadow 0ms`
             numbers[i].style.color = 'black'
             clearTimeout(timeout2)
           }, delay + 1000)
