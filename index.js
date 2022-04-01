@@ -68,14 +68,14 @@ arrays.forEach((array) => {
   
   const numbers = array.childNodes
 
-  function pushRandomSymbol() {
-    const interval = setInterval(() => {
-      numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
-      clearInterval(interval)
-      pushRandomSymbol()
-    }, Math.floor(Math.random() * 2000))
-  }
-  pushRandomSymbol()
+  // function pushRandomSymbol() {
+  //   const interval = setInterval(() => {
+  //     numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
+  //     clearInterval(interval)
+  //     pushRandomSymbol()
+  //   }, Math.floor(Math.random() * 2000))
+  // }
+  // pushRandomSymbol()
 
   for (let i = 0; i < numbers.length; i++) {
 
