@@ -50,14 +50,14 @@ createArrayOfArrays()
 const arrays = document.querySelectorAll('.array')
 
 arrays.forEach((array) => {
-  let time = Math.floor(Math.random() * 4000)
+  let time = Math.floor(Math.random() * 6000)
   let delay = Math.floor(Math.random() * 150 + 50)
   let transitionDelay = Math.floor(Math.random() * 10)
 
   setInterval(() => {
-    time = Math.floor(Math.random() * 6000 + 3000)
+    time = Math.floor(Math.random() * 6000 + 4000)
     delay = Math.floor(Math.random() * 150 + 50)
-    transitionDelay = Math.floor(Math.random() * 1500 + 200)
+    transitionDelay = Math.floor(Math.random() * 2000 + 300)
   }, time)
 
   const numbers = array.childNodes
@@ -83,12 +83,11 @@ arrays.forEach((array) => {
           const timeout3 = setTimeout(() => {
             numbers[i].style.textShadow = 'none'
             numbers[i].style.color = '#009a22'
-            numbers[i].style.transition = `color .4s linear, text-shadow 100ms`
             clearInterval(timeout3)
           }, delay)
 
           const timeout2 = setTimeout(() => {
-            numbers[i].style.transition = `color ${transitionDelay}ms linear, text-shadow 0ms`
+            numbers[i].style.transition = `color ${transitionDelay}ms linear`
             numbers[i].style.color = 'black'
             clearTimeout(timeout2)
           }, delay + 1000)
