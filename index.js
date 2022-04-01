@@ -50,19 +50,43 @@ createArrayOfArrays()
 const arrays = document.querySelectorAll('.array')
 
 arrays.forEach((array) => {
+
   let time = Math.floor(Math.random() * 6000)
   let delay = Math.floor(Math.random() * 150 + 50)
   let transitionDelay = Math.floor(Math.random() * 10)
 
-  setInterval(() => {
-    time = Math.floor(Math.random() * 6000 + 4000)
-    delay = Math.floor(Math.random() * 150 + 50)
-    transitionDelay = Math.floor(Math.random() * 2000 + 300)
-  }, time)
-
+  function createDelays() {
+    const interval = setInterval(() => {
+      time = Math.floor(Math.random() * 6000 + 4000)
+      delay = Math.floor(Math.random() * 150 + 50)
+      transitionDelay = Math.floor(Math.random() * 2000 + 300)
+      clearInterval(interval)
+      createDelays()
+    }, time)
+  }
+  createDelays()
+  
   const numbers = array.childNodes
 
   for (let i = 0; i < numbers.length; i++) {
+
+    function pushRandomSymbol() {
+      const interval = setInterval(() => {
+        one()
+
+        function one() {
+          const timeout = setTimeout(() => {
+            numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
+            clearTimeout(timeout)
+          }, delay)
+        }
+        
+        clearInterval(interval)
+        pushRandomSymbol()
+      }, Math.floor(Math.random() * 5000))
+    }
+    pushRandomSymbol()
+
     function go() {
       const interval = setInterval(() => {
         one()
@@ -80,10 +104,10 @@ arrays.forEach((array) => {
 
         function two() {
 
-          const timeout3 = setTimeout(() => {
+          const timeout = setTimeout(() => {
             numbers[i].style.textShadow = 'none'
             numbers[i].style.color = '#009a22'
-            clearInterval(timeout3)
+            clearTimeout(timeout)
           }, delay)
 
           const timeout2 = setTimeout(() => {
