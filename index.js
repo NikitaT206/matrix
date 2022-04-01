@@ -68,24 +68,24 @@ arrays.forEach((array) => {
   
   const numbers = array.childNodes
 
+  function pushRandomSymbol() {
+    const interval = setInterval(() => {
+      one()
+
+      function one() {
+        const timeout = setTimeout(() => {
+          numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
+          clearTimeout(timeout)
+        }, Math.floor(Math.random() * 100))
+      }
+
+      clearInterval(interval)
+      pushRandomSymbol()
+    }, Math.floor(Math.random() * 100))
+  }
+  pushRandomSymbol()
+
   for (let i = 0; i < numbers.length; i++) {
-
-    function pushRandomSymbol() {
-      const interval = setInterval(() => {
-        one()
-
-        function one() {
-          const timeout = setTimeout(() => {
-            numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
-            clearTimeout(timeout)
-          }, delay)
-        }
-        
-        clearInterval(interval)
-        pushRandomSymbol()
-      }, Math.floor(Math.random() * 5000))
-    }
-    pushRandomSymbol()
 
     function go() {
       const interval = setInterval(() => {
