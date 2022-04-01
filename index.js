@@ -70,18 +70,10 @@ arrays.forEach((array) => {
 
   function pushRandomSymbol() {
     const interval = setInterval(() => {
-      one()
-
-      function one() {
-        const timeout = setTimeout(() => {
-          numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
-          clearTimeout(timeout)
-        }, Math.floor(Math.random() * 100))
-      }
-
+      numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
       clearInterval(interval)
       pushRandomSymbol()
-    }, Math.floor(Math.random() * 100))
+    }, Math.floor(Math.random() * 2000))
   }
   pushRandomSymbol()
 
