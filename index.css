@@ -4,13 +4,15 @@
   margin: 0;
   padding: 0;
   display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
   width: 100vw;
   height: 100vh;
   max-width: 100vw;
   max-height: 100vh;
   overflow: hidden;
-  position: fixed;
   background-color: black;
+  position: absolute;
 }
 
 .array {
@@ -24,6 +26,10 @@
   font-family: "Matrix";
   font-size: 40px;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 @media screen and (max-width: 1280px) {

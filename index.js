@@ -10,8 +10,8 @@ function getArrayOfSymbols() {
   if (width > 1023) n = 35
   if (width >= 768) n = 25
   if (width <= 767) n = 20
-  const arrayOfNumbers = [...new Array(Math.floor(height / n))]
-  return arrayOfNumbers
+  const arrayOfSymbols = [...new Array(Math.floor(height / n))]
+  return arrayOfSymbols
 }
 
 function getArrayOfArrays() {
@@ -45,7 +45,7 @@ function createArrayOfArrays() {
   })
 }
 
-createArrayOfArrays()
+window.onload = createArrayOfArrays()
 
 const arrays = document.querySelectorAll('.array')
 
@@ -73,7 +73,7 @@ arrays.forEach((array) => {
   //     numbers[Math.floor(Math.random() * numbers.length)].textContent = getRandomSymbol()
   //     clearInterval(interval)
   //     pushRandomSymbol()
-  //   }, Math.floor(Math.random() * 2000))
+  //   }, delay * 10)
   // }
   // pushRandomSymbol()
 
